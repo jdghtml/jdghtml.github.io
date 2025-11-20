@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> -->
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Formulario</title>
 </head>
 <body>
-    <h1>Aquí irá mi curriculum</h1>
+    <h1>Formulario camión vaya ñapa</h1>
+    <form action="http://ncoge.com/phps/formulario.php" method="post">
+    <br>
+    HOBBIES: <textarea cols="80" rows="10" NAME="HOBBIES"></textarea>
+    <br>
+        <br>
+<select id="so" name="so">
+    <option value="" >- selecciona -</option>
+    <option value="windows">Windows</option>
+    <option value="mac">Mac</option>
+    <option value="linux" selected="selected">Linux</option>
+    <option value="otro">Otro</option>
+</select>
+
+        <BR> <input type="submit" value="Enviame"><input type="reset" 
+            name="limpiar" value="Borrar datos del formulario" />
+    </form>
 </body>
 </html>
