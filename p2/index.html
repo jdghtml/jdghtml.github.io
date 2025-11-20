@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" name="form1" action="http://ncoge.com/phps/formulario.php" method="post">
+        <table width="100%">
+          <tr>
+            <td valign="top"> 
+                <fieldset>
+                      <legend><strong>Datos personales:</strong></legend>
+                <p>
+                  <label>Nombre:</label>&nbsp;<input name="nombre" type="text" size="50" value="Aquí va tu nombre ...."/>
+                </p>
+                <p>
+                  <label>Apellidos:</label>&nbsp;<input name="apellidos" type="text" size="50" />
+                </p>
+                <p>
+                  <label>Correo:</label>&nbsp;<input name="correo" type="text" size="50" />
+                </p>
+                <p>
+                  <label>hobbies
+                  <textarea name="hobbies" cols="50" rows="3" id="hobbies"></textarea>
+                  </label>
+                </p>
+                </fieldset>
+            </td>
+               <td>
+                    
+                    <fieldset>
+                  <legend><strong>Idiomas</strong></legend>          
+                    <br />
+                      Puntúa tu nivel de idiomas de 1 a 5: <br /><br />
+                      <label><strong>Inglés</strong>: </label> 
+                          1 <input type="radio" name="ingles" value="1" />
+                          2 <input type="radio" name="ingles" value="2" />
+                          3 <input type="radio" name="ingles" value="3" />
+                          4 <input type="radio" name="ingles" value="4" />
+                          5 <input type="radio" name="ingles" value="5" />
+                        <br /><br />
+                      <label><strong>Francés</strong>: </label> 
+                          1 <input type="radio" name="frances" value="1" />
+                          2 <input type="radio" name="frances" value="2" />
+                          3 <input type="radio" name="frances" value="3" />
+                          4 <input type="radio" name="frances" value="4" />
+                          5 <input type="radio" name="frances" value="5" />
+                        <br /><br />
+                        <label><strong>Alemán</strong>: </label> 
+                          1 <input type="radio" name="aleman" value="1" />
+                          2 <input type="radio" name="aleman" value="2" />
+                          3 <input type="radio" name="aleman" value="3" />
+                          4 <input type="radio" name="aleman" value="4" />
+                          5 <input type="radio" name="aleman" value="5" />
+                        <br /><br />
+                </fieldset>
+                  <fieldset> <legend><strong>Domino los siguientes programas: </strong></legend>
+                  <table width="100%" border="0" align="center">
+                      <tr align="center">
+                          <td><label>Writer: </label><input name="Programa1" type="checkbox" value="Writer" /></td>
+                          <td><label>Base: </label><input name="Programa2" type="checkbox" value="Base" /></td>
+                      </tr>
+                      <tr align="center">
+                          <td><label>Calc: </label><input name="Programa3" type="checkbox" value="Calc" /></td>
+                          <td><label>Impress: </label><input name="Programa4" type="checkbox" value="Impress" /></td>
+                      </tr>
+                  </table>
+                </fieldset>
+                <fieldset>
+                      <legend><strong>Trabajo con el siguiente Sistema Operativo:</strong></legend>
+                          <select name="SistemaOperativo" size="1">
+                              <option value="Windows"> Windows </option>
+                              <option value="MacOs"> MacOs </option>
+                              <option value="Linux"> Linux </option>												 
+                          </select>
+                          
+                   </fieldset>
+                  </p>		
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" >
+                <input name="Enviar" type="reset"  value="Reiniciar"/>&nbsp;
+             <input name="Enviar2" type="image" src="images/go.png" value="Enviar"/></td>
+          </tr>
+        </table>
+      </form>
+</body>
+</html>
