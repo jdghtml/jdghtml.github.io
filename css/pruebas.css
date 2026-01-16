@@ -1,0 +1,38 @@
+p {
+    border: 2px red dashed;
+    border-color: green;
+    border-style: dotted;
+    border-width: 10px;
+    border-bottom: 2px red solid;
+   /* background-color:pink;*/
+   padding: 100px;
+   background-color: orange;
+   background-image: url("../images/imagen.png");
+   background-size: 200px;
+   background-repeat: no-repeat;
+   background-position: 50% 100%;
+}
+li:nth-child(odd){
+    background-color: lightgray;
+    width: 400px;
+}
+a {
+    border:3px green solid;
+    margin: 200px;
+    background-color: orange;
+}
+a:hover {
+    background-color: black;
+    color: white;
+}
+img:hover {
+    border: red 10px solid;
+    width: 40%;
+    src: url("../images/check.jpeg");
+}
+input:focus {
+    background-color: yellow;
+}
+input:active {
+    background-color: red;
+}
