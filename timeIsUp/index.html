@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time's Up! - El Juego</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- view: welcome -->
+        <section id="view-welcome" class="view active">
+            <h1 class="game-title">Time's Up!</h1>
+            <p class="subtitle">¡Adivina, describe y actúa!</p>
+            <div class="actions">
+                <button id="btn-start" class="btn primary">Nuevo Juego</button>
+            </div>
+            <div class="decoration-circle trigger-anim"></div>
+        </section>
+
+        <!-- view: setup -->
+        <section id="view-setup" class="view">
+            <header>
+                <h2>Preparación</h2>
+            </header>
+
+            <div class="step-container">
+                <!-- Step 1: Teams -->
+                <div class="setup-group">
+                    <h3>1. Equipos</h3>
+                    <div class="input-group">
+                        <label>Equipo 1</label>
+                        <input type="text" id="team1-name" value="Equipo Azul" placeholder="Nombre Equipo 1">
+                    </div>
+                    <div class="input-group">
+                        <label>Equipo 2</label>
+                        <input type="text" id="team2-name" value="Equipo Rojo" placeholder="Nombre Equipo 2">
+                    </div>
+                </div>
+
+                <!-- Step 2: Cards Source -->
+                <div class="setup-group">
+                    <h3>2. Cartas</h3>
+                    <div class="card-source-options">
+                        <button class="btn secondary selected" data-source="library">Usar Biblioteca</button>
+                        <button class="btn secondary" data-source="manual">Crear Cartas</button>
+                    </div>
+
+                    <div id="source-library" class="source-content active">
+                        <label>Elige un mazo:</label>
+                        <select id="library-select">
+                            <!-- Populated by JS -->
+                        </select>
+                        <p class="info-text">Un mazo equilibrado para empezar a jugar rápido.</p>
+                    </div>
+
+                    <div id="source-manual" class="source-content">
+                        <div class="input-group">
+                            <label>Jugadores totales</label>
+                            <input type="number" id="player-count" min="2" max="20" value="4">
+                        </div>
+                        <div class="input-group">
+                            <label>Cartas por jugador</label>
+                            <input type="number" id="cards-per-player" min="1" max="10" value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="btn-confirm-setup" class="btn primary">Continuar</button>
+            </div>
+        </section>
+
+        <!-- view: manual-entry -->
+        <section id="view-manual-entry" class="view">
+            <header>
+                <h2>Crear Cartas</h2>
+                <p id="card-entry-progress">Jugador 1: Carta 1/3</p>
+            </header>
+            <div class="card-input-container">
+                <input type="text" id="card-input" placeholder="Escribe un personaje/cosa..." autocomplete="off">
+            </div>
+            <div class="actions">
+                <button id="btn-next-card" class="btn primary">Siguiente Carta</button>
+            </div>
+        </section>
+
+        <!-- view: round-intro -->
+        <section id="view-round-intro" class="view">
+            <div class="round-card">
+                <h2 id="round-title">Ronda 1</h2>
+                <h3 id="round-subtitle">Descripción Libre</h3>
+                <p id="round-rules" class="rules-text">
+                    Describe el concepto libremente. ¡No puedes decir la palabra ni derivados!
+                </p>
+                <div class="round-badge">
+                    <span>Pasar: </span>
+                    <span id="round-pass-rule">NO PERMITIDO</span>
+                </div>
+                <button id="btn-start-round" class="btn primary">¡Empezar!</button>
+            </div>
+        </section>
+
+        <!-- view: turn-start -->
+        <section id="view-turn-start" class="view">
+            <header>
+                <h2>Próximo Turno</h2>
+            </header>
+
+            <div class="turn-versus-container">
+                <div id="ts-team1-card" class="team-card">
+                    <h3 class="ts-name">Equipo 1</h3>
+                    <div class="ts-score">0</div>
+                    <div class="ts-status">Esperando...</div>
+                </div>
+
+                <div class="versus-divider">VS</div>
+
+                <div id="ts-team2-card" class="team-card">
+                    <h3 class="ts-name">Equipo 2</h3>
+                    <div class="ts-score">0</div>
+                    <div class="ts-status">Esperando...</div>
+                </div>
+            </div>
+
+            <div class="turn-cta">
+                <p>Le toca jugar a: <span id="active-team-name-display">Equipo 1</span></p>
+                <button id="btn-start-turn" class="btn primary pulse">¡Comenzar Tiempo!</button>
+            </div>
+        </section>
+
+        <!-- view: game-play -->
+        <section id="view-game-play" class="view">
+            <div class="game-header">
+                <div class="live-scoreboard">
+                    <div class="team-score t1">
+                        <span class="ls-name" id="live-team1-name">Eq. 1</span>
+                        <span class="ls-points" id="live-team1-score">0</span>
+                    </div>
+                    <div class="timer-display-big">
+                        <span id="timer-text">30</span>
+                        <small>seg</small>
+                    </div>
+                    <div class="team-score t2">
+                        <span class="ls-name" id="live-team2-name">Eq. 2</span>
+                        <span class="ls-points" id="live-team2-score">0</span>
+                    </div>
+                </div>
+                <div class="timer-bar-container">
+                    <div id="timer-bar"></div>
+                </div>
+            </div>
+
+            <div class="game-card-display">
+                <div class="card-round-badge" id="card-round-badge">Ronda 1</div>
+                <div id="current-card-text" class="card-text">???</div>
+            </div>
+
+            <div class="game-controls">
+                <button id="btn-pass" class="btn warning">Pasar</button>
+                <button id="btn-correct" class="btn success">¡Acertada!</button>
+            </div>
+        </section>
+
+        <!-- view: turn-end -->
+        <section id="view-turn-end" class="view">
+            <h2>¡Tiempo!</h2>
+            <p>Se acabó el turno.</p>
+            <div class="turn-summary">
+                <p class="summary-score">+<span id="turn-score-display">0</span> Puntos</p>
+            </div>
+            <button id="btn-next-turn" class="btn primary">Siguiente Turno</button>
+        </section>
+
+        <!-- view: game-over -->
+        <section id="view-game-over" class="view">
+            <h1 class="celebration-title">🎉 ¡Partida Terminada! 🎉</h1>
+
+            <div class="winner-podium">
+                <div class="winner-cup">🏆</div>
+                <h2 id="winner-name">Ganador: Equipo ??</h2>
+            </div>
+
+            <div class="final-scores-container">
+                <div class="final-card f-team1">
+                    <h3 id="end-team1-name">Equipo 1</h3>
+                    <span id="end-team1-score" class="final-number">0</span>
+                    <span class="label">Puntos</span>
+                </div>
+                <div class="final-card f-team2">
+                    <h3 id="end-team2-name">Equipo 2</h3>
+                    <span id="end-team2-score" class="final-number">0</span>
+                    <span class="label">Puntos</span>
+                </div>
+            </div>
+
+            <button id="btn-restart" class="btn secondary">Volver a Jugar</button>
+        </section>
+
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
