@@ -1,0 +1,208 @@
+:root {
+    --bg-color: #0a0a0c;
+    --card-bg: #16161a;
+    --accent: #ff9500; /* Orange */
+    --accent-pink: #ff007a;
+    --accent-purple: #9d00ff; /* Nuevo color para compartir */
+    --text-main: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    background: linear-gradient(180deg, #111 0%, transparent 100%);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent);
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Editor Section */
+.editor-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    cursor: grab;
+    touch-action: none;
+}
+canvas:active {
+    cursor: grabbing;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.control-row {
+    display: grid;
+    grid-template-columns: 1fr 50px 80px;
+    gap: 10px;
+    align-items: center;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.control-label {
+    grid-column: 1 / -1;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: 1px solid #555; border-radius: 4px; }
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    accent-color: var(--accent-pink);
+}
+
+.api-key-box {
+    border: 1px dashed var(--accent-pink);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-ai {
+    background: linear-gradient(45deg, var(--accent), #ff6b00);
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-action {
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn-download {
+    background: var(--accent-pink);
+}
+.btn-download:hover { background: #d60066; }
+
+.btn-share {
+    background: var(--accent-purple);
+}
+.btn-share:hover { background: #7a00c7; }
+
+/* Gallery */
+.gallery-zone {
+    height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+@media (max-width: 900px) {
+    .container { grid-template-columns: 1fr; }
+    .gallery-zone { height: 400px; order: 2; }
+}
