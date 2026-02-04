@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Flexbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --accent-color: #FFC107;
+            --text-color: #333;
+            --light-bg: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            background: var(--secondary-color);
+            color: white;
+            width: 250px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent-color);
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            flex: 1 1 calc(33.333% - 2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 {
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            flex: 1;
+        }
+
+        .card button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card button:hover {
+            background: var(--accent-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Flexbox</h1>
+        </header>
+        <div class="main-content">
+            <nav class="sidebar">
+                <a href="#">Inicio</a>
+                <a href="#">Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="#">Mensajes</a>
+                <a href="#">Ayuda</a>
+            </nav>
+            <main class="content">
+                <div class="card">
+                    <h2>Tarjeta 1</h2>
+                    <p>Contenido de la tarjeta 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+                <div class="card">
+                    <h2>Tarjeta 2</h2>
+                    <p>Contenido de la tarjeta 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+                <div class="card">
+                    <h2>Tarjeta 3</h2>
+                    <p>Contenido de la tarjeta 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+                <div class="card">
+                    <h2>Tarjeta 4</h2>
+                    <p>Contenido de la tarjeta 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+                <div class="card">
+                    <h2>Tarjeta 5</h2>
+                    <p>Contenido de la tarjeta 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+                <div class="card">
+                    <h2>Tarjeta 6</h2>
+                    <p>Contenido de la tarjeta 6. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Leer más</button>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <p>© 2024 Dashboard Flexbox | Todos los derechos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+*{
+  margin: 0px auto;
+}
+
+body {
+
+
+  background: url('../images/fondo.jpg');
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  background-attachment: fixed;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
+  font-family: 'Indie Flower', cursive;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+img {  
+  margin: 10px;
+}
+
+ul {
+  color: white;
+}
+
+.imageLeft {
+
+
+  float: left;
+  border: dashed 5px white;
+  margin-right: 10px;
+    -webkit-border-radius: 30px 30px 30px 30px ;  /* Safari  */
+  -moz-border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  border-radius: 30px 30px 30px 30px ;     /* Firefox */
+}
+
+.imageRight {
+
+  float: right;
+  border: dashed 5px white;
+  margin-left: 10px;
+    -webkit-border-radius: 30px 30px 30px 30px ;  /* Safari  */
+  -moz-border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  border-radius: 30px 30px 30px 30px ;     /* Firefox */
+}
+
+
+#main {
+
+  
+  float: left;
+  width: 90%;
+  border-right: 1px dashed white;
+  color: #AEC0B1;
+}
+
+#rightNav {
+text-align: center;
+
+  color: #AEC0B1;
+  background-color: #404040;
+}
+
+#rightNav li{
+  color: #AEC0B1;
+  list-style:none; 
+}
+
+#rightNav img:hover{
+  color: #AEC0B1;
+  list-style:none; 
+  border-bottom: solid 5px #FF9900;
+  margin-bottom: 5px;
+
+}
+
+
+#header {
+
+
+  text-align: left;
+  border-bottom: 5px dashed white;
+  color: white;
+  background: url('../images/tatoo-logo3.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  height: 310px;
+  font-size: xx-large;
+  padding-left: 150px;
+  padding-top: 50px;
+  text-shadow:
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000;  
+
+}
+
+#header p{
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+#content{
+  background-color: #404040;
+  width: 100%;
+  overflow: auto;
+  
+}
+
+#menu {
+  position:fixed; 
+  top: 0px;
+  width: 100%;
+  
+  margin: 0px;
+  text-align: center;
+  background-color: #097054;
+  border: 1px solid #FF9900;
+  border-top: 2px dashed white;
+  border-bottom: 2px dashed white;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2em;
+}
+
+#menu a{
+  color: white;
+  text-decoration: none;
+}
+
+#menu li{
+display: inline;
+  padding-left: 5px;  
+}
+
+#menu li a:hover{
+  border-bottom: 5px solid orange;
+  
+}
+
+#footer{
+  position:fixed; 
+  bottom: 0px;
+  width: 100%;  
+  
+  background-color: #097054;
+  text-align: center;
+  color: white;
+  border-top: 2px dashed white;
+  clear: both;
+  margin: 0px;
+
+}
+
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+
+#footer a:hover{
+  border-top: solid 5px #FF9900;
+
+}
+
+#image {
+  text-align: right;
+  margin-right: 60px;
+}
+
+#textCookie {
+  text-align: center;
+}
+
+#cookieEU {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  
+  text-align: center;
+  border:2px solid red;
+  background-color: white;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  -webkit-box-shadow: 2px 2px 50px black;
+  -moz-box-shadow: 2px 2px 50px black;
+  box-shadow: 2px 2px 50px black;
+}
+
+.button {
+  	background-color: #097054; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+#one {
+  text-align: justify;
+  background-color: #4D4D4D;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 1%;
+  -webkit-border-radius: 30px 30px 30px 30px ;  /* Safari  */
+  -moz-border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  overflow: auto;
+  border: 1px dashed black;
+
+}
+
+#two {
+  text-align: justify;
+  overflow: auto;
+
+  background-color: #4D4D4D;
+  margin-left: 1%;
+  margin-right: 5%;
+  margin-bottom: 30px;
+  padding: 10px;
+  -webkit-border-radius: 30px 30px 30px 30px ;  /* Safari  */
+  -moz-border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  border-radius: 30px 30px 30px 30px ;     /* Firefox */
+  border: 1px dashed black;
+}
+
+
+
+@media all and (max-width: 500px) {
+  #rightNav {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20%;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px; 
+    padding-left: 0px;
+    border-top: 2px dashed #4D4D4D;
+  }
+
+  .imageLeft{
+    float:none;
+    text-align: center;
+  }
+
+  .imageRight{
+        float:none;
+
+    text-align: center;
+  }
+
+  #header{
+    padding-top:  100px;
+  }
+
+  #rightNav img{
+    width: 8%;
+    margin: 0px;
+  }
+
+  #rightNav li{
+display: inline;
+  }
+  
+  #rightNav img:hover{
+    color: #AEC0B1;
+    list-style:none; 
+    border-bottom: solid 5px #FF9900;
+    margin-bottom: 0px;
+  }
+
+  #main {
+width: 100%;
+  }
+  
+  #footer{
+    padding-bottom: 20px;
+  }
+ 
+}
+

@@ -1,0 +1,243 @@
+:root {
+    --background-color: #404040;
+    --padding: 10px;
+    --font-size: 16px;
+  }
+  
+*{
+    margin: 0px 0;
+}
+  
+body {
+    background: url('../images/fondo.jpg');
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    background-attachment: fixed;  
+    background-size: cover;      
+    font-family: 'Indie Flower', cursive;
+}
+
+.menu {
+    background-color:#097054;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 10px;    
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+.menu ul {
+    padding-right: 10px;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color:#097054;
+    color: white;
+    text-align: center;
+}
+footer a {
+    color: white;
+}
+
+
+h2 {
+    margin-bottom: 10px;
+}
+
+img {  
+    margin: 10px;
+}
+
+
+
+nav {
+}
+nav a {
+    color: white;
+}
+
+a:hover {
+    border-bottom: 5px orange solid;
+}
+#cookieEU{
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    border:2px solid red;
+    background-color: white;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    box-shadow: 2px 2px 50px black;
+
+}
+
+.button {
+    background-color: #097054; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+}
+
+.uno, .dos {
+    display: flex;
+    color: white;
+    border-radius: 30px;
+    background-color: #4D4D4D;
+    margin: 15px;
+}
+.uno img { 
+    order: 2; 
+    border: 5px white dashed;
+    border-radius: 30px;
+    /* hace que la imagen no se estire para completar la capa */
+    /* max-width: 50%;  */
+    /* object-fit: cover; */
+    align-self: flex-start; 
+} 
+.uno div { 
+    order: 1;
+}
+
+.dos img { 
+    border: 5px red dashed;
+    border-radius: 30px;
+    /* hace que la imagen no se estire para completar la capa */
+    /* max-width: 50%; 
+    object-fit: cover; */
+    align-self: flex-start;
+
+} 
+
+.main {
+    border-right: 2px white dashed;
+    flex-basis: 90%;
+}
+
+.submenu {
+    flex-basis: 10%;
+}
+
+.submenu ul {
+    color: white;
+    padding: auto;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+li {
+    display: inline;
+    /* padding-left: 10px; */
+}
+
+header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: 5%;
+
+
+    /* text-align: left; */
+    border-bottom: 5px dashed white;
+    color: white;
+    /* background: url('../images/tatoo-logo3.png');
+    background-position: left center;
+    background-repeat: no-repeat; */
+  
+
+    height: 310px;
+    font-size: xx-large;
+    /* padding-left: 150px;
+    padding-top: 50px; */
+    text-shadow:
+      -3px -3px 0 #000,
+      3px -3px 0 #000,
+      -3px 3px 0 #000,
+      3px 3px 0 #000;  
+  
+  }
+  
+  header p{
+      text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;  
+  }
+
+  .imgName {
+        flex-basis: 15%;
+        align-self: center;
+  }
+  
+  header img {    
+    width: 80%;
+  }
+
+  .name {
+    flex-basis: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center  ;
+  }
+
+  @media all and (max-width: 500px) {
+    .uno, .dos, .container {
+        display:block;
+        text-align: center;
+    }
+   .submenu img {
+    width: 10%;
+   }
+   header {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-top: 100px; */
+    /* text-align: center; */
+    border-bottom: 5px dashed white;
+    color: white;
+    /* background: url('../images/tatoo-logo3.png');
+    background-position: top center;
+    background-repeat: no-repeat; */
+
+    height: 200px;
+    font-size: large;
+    /* padding-left: 0px;
+    padding-top: 200px; */
+    text-shadow:
+        -3px -3px 0 #000,
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000;      
+    }
+  }
+  
+  
